@@ -29,7 +29,7 @@ public class Main {
             menuOption = input.nextInt();
 
             switch (menuOption) {
-                case 1:
+                
                     Car carObj = new Car();
 
                     System.out.print("Enter make: ");
@@ -64,7 +64,7 @@ public class Main {
                     System.out.println("Vehicle registered successfully!");
                     break;
 
-                case 2:
+                
                     if (cars.isEmpty()) {
                         System.out.println("No vehicles have been captured yet.");
                     } else {
@@ -76,7 +76,7 @@ public class Main {
                     }
                     break;
 
-                case 3:
+                
                     System.out.print("Enter VIN to search: ");
                     String searchVin = input.next();
                     boolean found = false;
@@ -91,7 +91,7 @@ public class Main {
                     if (!found) System.out.println(" No vehicle found with that VIN.");
                     break;
 
-                case 4:
+                
                     System.out.print("Enter VIN to delete: ");
                     String deleteVin = input.next();
                     boolean removed = cars.removeIf(car -> car.getVin().equalsIgnoreCase(deleteVin));
@@ -102,7 +102,7 @@ public class Main {
                     }
                     break;
 
-                case 5:
+                
                     System.out.println(" Thanks for using the app. Goodbye!");
                     break;
 
