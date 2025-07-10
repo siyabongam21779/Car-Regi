@@ -11,7 +11,7 @@ public class Main {
         List<Car> cars = new ArrayList<>();
         int menuOption;
 
-        System.out.println("Welcome to the Vehicle Registration App!");
+        System.out.println("🚗 Welcome to the Vehicle Registration App!");
 
         do {
             System.out.println("\nChoose an option:");
@@ -29,7 +29,7 @@ public class Main {
             menuOption = input.nextInt();
 
             switch (menuOption) {
-                
+                case 1:
                     Car carObj = new Car();
 
                     System.out.print("Enter make: ");
@@ -61,14 +61,14 @@ public class Main {
                     carObj.setYear(year);
 
                     cars.add(carObj);
-                    System.out.println("Vehicle registered successfully!");
+                    System.out.println("✅ Vehicle registered successfully!");
                     break;
 
-                
+                case 2:
                     if (cars.isEmpty()) {
                         System.out.println("No vehicles have been captured yet.");
                     } else {
-                        System.out.println("\n Vehicle Report (" + cars.size() + " total):");
+                        System.out.println("\n📋 Vehicle Report (" + cars.size() + " total):");
                         for (Car car : cars) {
                             System.out.println(car);
                             System.out.println("--------------------------");
@@ -76,34 +76,34 @@ public class Main {
                     }
                     break;
 
-                
+                case 3:
                     System.out.print("Enter VIN to search: ");
                     String searchVin = input.next();
                     boolean found = false;
                     for (Car car : cars) {
                         if (car.getVin().equalsIgnoreCase(searchVin)) {
-                            System.out.println("\n Vehicle found:");
+                            System.out.println("\n✅ Vehicle found:");
                             System.out.println(car);
                             found = true;
                             break;
                         }
                     }
-                    if (!found) System.out.println(" No vehicle found with that VIN.");
+                    if (!found) System.out.println("🚫 No vehicle found with that VIN.");
                     break;
 
-                
+                case 4:
                     System.out.print("Enter VIN to delete: ");
                     String deleteVin = input.next();
                     boolean removed = cars.removeIf(car -> car.getVin().equalsIgnoreCase(deleteVin));
                     if (removed) {
-                        System.out.println(" Vehicle removed successfully.");
+                        System.out.println("✅ Vehicle removed successfully.");
                     } else {
-                        System.out.println(" No vehicle found with that VIN.");
+                        System.out.println("🚫 No vehicle found with that VIN.");
                     }
                     break;
 
-                
-                    System.out.println(" Thanks for using the app. Goodbye!");
+                case 5:
+                    System.out.println("👋 Thanks for using the app. Goodbye!");
                     break;
 
                 default:
